@@ -1,14 +1,6 @@
 import java.util.NoSuchElementException;
 
-class Nodo<T> {
-    T dato;
-    Nodo<T> next;
 
-    public Nodo(T dato) {
-        this.dato = dato;
-        this.next = null;
-    }
-}
 
 class Pila<T> {
     private Nodo<T> top;
@@ -18,7 +10,10 @@ class Pila<T> {
     }
 
     public boolean isEmpty() {
-        return top == null;
+        if(top.dato==null){
+            return true;
+        }
+        return false;
     }
 
     public void push(T dato) {
@@ -53,7 +48,6 @@ class Pila<T> {
         return count;
     }
 
-    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         Nodo<T> current = top;
